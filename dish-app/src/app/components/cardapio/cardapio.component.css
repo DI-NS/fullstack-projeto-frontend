@@ -1,0 +1,112 @@
+/* Estilo para a lista de pratos */
+ul {
+    list-style-type: none; /* Remove os marcadores da lista */
+    padding: 0; /* Remove o preenchimento padrão da lista */
+    margin: 0 auto; /* Centraliza a lista */
+    max-width: 98%; /* Define uma largura máxima para a lista */
+  }
+  
+  /* Estilo para cada item do prato */
+  .dish-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc; /* Borda do item */
+    border-radius: 5px; /* Bordas arredondadas */
+    margin: 10px 0; /* Margem entre os itens */
+    background-color: #ffffff; /* Fundo do item */
+  }
+  
+  .dish-details {
+    flex: 1; /* Permitir que a parte dos detalhes ocupe o espaço restante */
+  }
+  
+  .price {
+    margin: 0; /* Remover margem do preço */
+    font-size: 0.9em; /* Tamanho da fonte do preço */
+    color: #555; /* Cor do texto do preço */
+  }
+  
+  /* Adicionando estilo para o checkbox */
+  p-checkbox {
+    flex-shrink: 0; /* Impede que o checkbox encolha */
+    margin-left: 10px; /* Margem esquerda para o checkbox */
+  }
+  
+  p-checkbox .p-checkbox-box {
+    width: 20px; /* Largura fixa para o checkbox */
+    height: 20px; /* Altura fixa para o checkbox */
+  }
+  
+  h2 {
+    text-align: center;
+    background-color: #E6F0FF;
+    padding: 0px;
+    margin: 0px;
+    border-radius: 0;
+    width: calc(100% + 16px);
+    position: relative;
+    left: -8px;
+    height: 2.6rem;
+    margin-bottom: 20px;
+    top: -10px;
+    padding-top: 42px;
+    font-family: 'Inter', sans-serif; /* Aplica a fonte Inter */
+    font-size: 25px;
+    font-weight: 700; /* Define o peso da fonte como bold */
+  }
+  
+  .dish-name {
+    font-family: 'Inter', sans-serif; /* Aplica a fonte Inter */
+    font-weight: 600; /* Semi bold */
+    font-size: 20px; /* Tamanho 20 */
+  }
+  
+  .dish-price {
+    font-family: 'Inter', sans-serif; /* Aplica a fonte Inter */
+    font-weight: 400; /* Regular */
+    font-size: 14px; /* Tamanho 14 */
+  }
+  
+
+  .button-footer {
+    width: 100%;
+    position: fixed;
+    /* bottom: 20px; */
+    left: 0%;
+    display: flex;
+    justify-content: center;
+    /* height: 80px; */
+    /* background-color: black; */
+    align-items: center;
+    text-align: center;
+    background-color: #E6F0FF;
+    /* padding: 0px; */
+    /* margin: 0px; */
+    /* border-radius: 0; */
+    /* width: calc(100% + 16px); */
+    /* position: relative; */
+    /* left: -8px; */
+    height: 5rem;
+    margin-bottom: 20px;
+    bottom: -20px;
+    /* padding-top: 42px; */
+    font-family: "Inter", sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+  }
+
+
+  .continue-button.button-footer[_ngcontent-ng-c3618815626] {
+
+    background-color: #3B82F6;
+    color: white;
+    border-inline-color: transparent;
+    /* outline-color: transparent; */
+    border-color: transparent;
+    /* outline-color: currentcolor; */
+    height: 40px;
+
+  }
+  

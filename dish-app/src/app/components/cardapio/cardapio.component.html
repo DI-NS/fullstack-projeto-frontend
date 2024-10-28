@@ -1,0 +1,21 @@
+<h2>Cardápio</h2>
+<ul>
+  <li *ngFor="let dish of dishes" class="dish-item">
+    <div class="dish-details">
+      <div class="dish-name">{{ dish.name }}</div>
+      <div class="price dish-price">R$ {{ dish.price | number:'1.2-2' }}</div>
+    </div>
+    <p-checkbox 
+      [(ngModel)]="dish.selected" 
+      [binary]="true" 
+      inputId="dish-{{dish.id}}"></p-checkbox>
+  </li>
+</ul>
+
+<!-- Contêiner para o botão "Continuar" -->
+<div class="button-footer">
+  <p-button 
+    label="Continuar" 
+    styleClass="continue-button"> <!-- Aqui usamos styleClass para definir o fundo -->
+  </p-button>
+</div>
