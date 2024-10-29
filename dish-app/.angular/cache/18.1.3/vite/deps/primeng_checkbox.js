@@ -1,4 +1,8 @@
 import {
+  NG_VALUE_ACCESSOR,
+  NgControl
+} from "./chunk-G7VUU2SS.js";
+import {
   AutoFocus,
   AutoFocusModule,
   BaseIcon,
@@ -7,10 +11,6 @@ import {
   PrimeTemplate,
   SharedModule
 } from "./chunk-4SA6UO5M.js";
-import {
-  NG_VALUE_ACCESSOR,
-  NgControl
-} from "./chunk-G7VUU2SS.js";
 import {
   CommonModule,
   NgClass,
