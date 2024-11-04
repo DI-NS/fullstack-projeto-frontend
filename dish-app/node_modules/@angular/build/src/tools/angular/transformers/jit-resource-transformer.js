@@ -116,7 +116,7 @@ function visitComponentMetadata(nodeFactory, node, styleReplacements, resourceIm
                 return undefined;
             }
             return node;
-        case 'styleUrls':
+        case 'styleUrls': {
             if (!typescript_1.default.isArrayLiteralExpression(node.initializer)) {
                 return node;
             }
@@ -132,6 +132,7 @@ function visitComponentMetadata(nodeFactory, node, styleReplacements, resourceIm
             styleReplacements.push(...externalStyles);
             // The external styles will be added afterwards in combination with any inline styles
             return undefined;
+        }
         default:
             // All other elements are passed through
             return node;

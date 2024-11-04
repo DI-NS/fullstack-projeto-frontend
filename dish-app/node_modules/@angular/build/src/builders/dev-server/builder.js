@@ -37,7 +37,7 @@ async function* execute(options, context, extensions) {
     if (options.prebundle && !normalizedOptions.cacheOptions.enabled) {
         context.logger.warn(`Prebundling has been configured but will not be used because caching has been disabled.`);
     }
-    yield* (0, vite_server_1.serveWithVite)(normalizedOptions, builderName, (options, context, plugins) => (0, internal_1.buildApplicationInternal)(options, context, { write: false }, { codePlugins: plugins }), context, { indexHtml: extensions?.indexHtmlTransformer }, extensions);
+    yield* (0, vite_server_1.serveWithVite)(normalizedOptions, builderName, (options, context, plugins) => (0, internal_1.buildApplicationInternal)(options, context, { codePlugins: plugins }), context, { indexHtml: extensions?.indexHtmlTransformer }, extensions);
 }
 async function initialize(initialOptions, projectName, context) {
     // Purge old build disk cache.

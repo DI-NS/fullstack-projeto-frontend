@@ -21,7 +21,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.assertCompatibleAngularVersion = exports.getSupportedBrowsers = exports.generateBuildStatsTable = exports.augmentAppWithServiceWorker = exports.purgeStaleBuildCache = exports.createTranslationLoader = exports.loadProxyConfiguration = exports.InlineCriticalCssProcessor = exports.IndexHtmlGenerator = exports.loadTranslations = exports.createI18nOptions = exports.deleteOutputDir = exports.checkPort = exports.createCompilerPlugin = exports.JavaScriptTransformer = exports.createJitResourceTransformer = exports.SourceFileCache = exports.SassWorkerImplementation = exports.transformSupportedBrowsersToTargets = exports.emitFilesToDisk = exports.serveWithVite = exports.buildApplicationInternal = void 0;
+exports.assertCompatibleAngularVersion = exports.getSupportedBrowsers = exports.generateBuildStatsTable = exports.augmentAppWithServiceWorker = exports.purgeStaleBuildCache = exports.createTranslationLoader = exports.loadProxyConfiguration = exports.InlineCriticalCssProcessor = exports.IndexHtmlGenerator = exports.loadTranslations = exports.createI18nOptions = exports.deleteOutputDir = exports.checkPort = exports.createCompilerPlugin = exports.JavaScriptTransformer = exports.createJitResourceTransformer = exports.SourceFileCache = exports.SassWorkerImplementation = exports.transformSupportedBrowsersToTargets = exports.emitFilesToDisk = exports.serveWithVite = exports.ResultKind = exports.buildApplicationInternal = void 0;
 /**
  * @fileoverview
  * Private exports intended only for use with the @angular-devkit/build-angular package.
@@ -31,6 +31,8 @@ exports.assertCompatibleAngularVersion = exports.getSupportedBrowsers = exports.
 // Builders
 var application_1 = require("./builders/application");
 Object.defineProperty(exports, "buildApplicationInternal", { enumerable: true, get: function () { return application_1.buildApplicationInternal; } });
+var results_1 = require("./builders/application/results");
+Object.defineProperty(exports, "ResultKind", { enumerable: true, get: function () { return results_1.ResultKind; } });
 var vite_server_1 = require("./builders/dev-server/vite-server");
 Object.defineProperty(exports, "serveWithVite", { enumerable: true, get: function () { return vite_server_1.serveWithVite; } });
 // Tools

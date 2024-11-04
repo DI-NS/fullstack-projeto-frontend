@@ -101,6 +101,8 @@ async function executeBuild(options, context, rebuildState) {
     // Watch input index HTML file if configured
     if (options.indexHtmlOptions) {
         executionResult.extraWatchFiles.push(options.indexHtmlOptions.input);
+        executionResult.htmlIndexPath = options.indexHtmlOptions.output;
+        executionResult.htmlBaseHref = options.baseHref;
     }
     // Perform i18n translation inlining if enabled
     if (i18nOptions.shouldInline) {

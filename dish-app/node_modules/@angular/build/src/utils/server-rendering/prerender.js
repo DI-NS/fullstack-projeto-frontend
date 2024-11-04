@@ -49,11 +49,14 @@ async function prerenderPages(workspaceRoot, appShellOptions = {}, prerenderOpti
         assetsReversed[addLeadingSlash(destination.replace(/\\/g, node_path_1.posix.sep))] = source;
     }
     // Get routes to prerender
-    const { routes: allRoutes, warnings: routesWarnings } = await getAllRoutes(workspaceRoot, outputFilesForWorker, assetsReversed, document, appShellOptions, prerenderOptions, sourcemap, verbose);
+    const { routes: allRoutes, warnings: routesWarnings, errors: routesErrors, } = await getAllRoutes(workspaceRoot, outputFilesForWorker, assetsReversed, document, appShellOptions, prerenderOptions, sourcemap, verbose);
+    if (routesErrors?.length) {
+        errors.push(...routesErrors);
+    }
     if (routesWarnings?.length) {
         warnings.push(...routesWarnings);
     }
-    if (allRoutes.size < 1) {
+    if (allRoutes.size < 1 || errors.length > 0) {
         return {
             errors,
             warnings,
@@ -109,7 +112,8 @@ async function renderPages(sourcemap, allRoutes, maxThreads, workspaceRoot, outp
             const isAppShellRoute = appShellRoute === route;
             const serverContext = isAppShellRoute ? 'app-shell' : 'ssg';
             const render = renderWorker.run({ route, serverContext });
-            const renderResult = render.then(({ content, warnings, errors }) => {
+            const renderResult = render
+                .then(({ content, warnings, errors }) => {
                 if (content !== undefined) {
                     const outPath = isAppShellRoute
                         ? 'index.html'
@@ -122,6 +126,10 @@ async function renderPages(sourcemap, allRoutes, maxThreads, workspaceRoot, outp
                 if (errors) {
                     errors.push(...errors);
                 }
+            })
+                .catch((err) => {
+                errors.push(`An error occurred while prerendering route '${route}'.\n\n${err.stack}`);
+                void renderWorker.destroy();
             });
             renderingPromises.push(renderResult);
         }
@@ -173,15 +181,19 @@ async function getAllRoutes(workspaceRoot, outputFilesForWorker, assetFilesForWo
         execArgv: workerExecArgv,
         recordTiming: false,
     });
+    const errors = [];
     const { routes: extractedRoutes, warnings } = await renderWorker
         .run({})
+        .catch((err) => {
+        errors.push(`An error occurred while extracting routes.\n\n${err.stack}`);
+    })
         .finally(() => {
         void renderWorker.destroy();
     });
     for (const route of extractedRoutes) {
         routes.add(route);
     }
-    return { routes, warnings };
+    return { routes, warnings, errors };
 }
 function addLeadingSlash(value) {
     return value.charAt(0) === '/' ? value : '/' + value;

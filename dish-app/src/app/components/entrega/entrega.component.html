@@ -1,0 +1,20 @@
+<div *ngIf="orders.length === 0">Não há pedidos para despache ou a caminho.</div>
+<div *ngFor="let order of orders" class="order-container">
+  <h3>Pedido ID: {{ order.id }}</h3>
+  <p>Status atual: {{ order.status }}</p>
+
+  <!-- Dropdown para alterar o status -->
+  <label for="statusDropdown">Alterar Status:</label>
+  <select [(ngModel)]="order.status" (change)="updateOrderStatus(order)">
+    <option value="Despache">Para despache</option>
+    <option value="Caminho">A Caminho</option>
+    <option value="Entregue">Entregue</option>
+  </select>
+
+  <!-- Listagem dos produtos -->
+  <ul>
+    <li *ngFor="let product of order.product">
+      {{ product.name }} - {{ product.description }}
+    </li>
+  </ul>
+</div>

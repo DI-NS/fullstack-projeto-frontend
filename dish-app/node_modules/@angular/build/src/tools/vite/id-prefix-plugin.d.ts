@@ -6,4 +6,4 @@
  * found in the LICENSE file at https://angular.dev/license
  */
 import type { Plugin } from 'vite';
-export declare const createRemoveIdPrefixPlugin: (externals: string[]) => Plugin;
+export declare function createRemoveIdPrefixPlugin(externals: string[]): Plugin;

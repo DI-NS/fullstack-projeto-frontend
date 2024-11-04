@@ -1,0 +1,48 @@
+<p-messages></p-messages> <!-- Adicione o componente de mensagens aqui -->
+
+<h2>Informações de Entrega</h2>
+<form (ngSubmit)="onSubmit()">
+  <p-floatLabel>
+    <input pInputText id="nome" [(ngModel)]="nome" name="nome" required />
+    <label for="nome">Nome</label>
+  </p-floatLabel>
+
+  <p-floatLabel>
+    <input pInputText id="rua" type="rua" [(ngModel)]="rua" name="rua" required />
+    <label for="rua">Rua</label>
+  </p-floatLabel>
+
+  <p-floatLabel>
+    <input pInputText id="numero" [(ngModel)]="numero" name="numero" required />
+    <label for="numero">Número</label>
+  </p-floatLabel>
+
+  <p-floatLabel>
+    <input pInputText id="complemento" [(ngModel)]="complemento" name="complemento" />
+    <label for="complemento">Complemento</label>
+  </p-floatLabel>
+
+  <p-floatLabel>
+    <input pInputText id="CEP" [(ngModel)]="CEP" name="CEP" />
+    <label for="CEP">CEP</label>
+  </p-floatLabel>
+
+  <p-floatLabel>
+    <input pInputText id="estado" [(ngModel)]="estado" name="estado" />
+    <label for="estado">Estado</label>
+  </p-floatLabel>
+
+  <p-floatLabel>
+    <input pInputText id="cidade" [(ngModel)]="cidade" name="cidade" />
+    <label for="cidade">Cidade</label>
+  </p-floatLabel>
+
+  <!-- Contêiner para o botão "Pedir" -->
+  <div class="button-footer">
+    <p-button 
+      label="Pedir" 
+      styleClass="continue-button" 
+      type="submit"> 
+    </p-button>
+  </div>
+</form>

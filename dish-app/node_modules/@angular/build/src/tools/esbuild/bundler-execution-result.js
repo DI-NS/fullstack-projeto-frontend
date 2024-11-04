@@ -24,6 +24,8 @@ class ExecutionResult {
     logs = [];
     externalMetadata;
     extraWatchFiles = [];
+    htmlIndexPath;
+    htmlBaseHref;
     constructor(rebuildContexts, codeBundleCache) {
         this.rebuildContexts = rebuildContexts;
         this.codeBundleCache = codeBundleCache;

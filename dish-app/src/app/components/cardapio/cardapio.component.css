@@ -48,13 +48,13 @@ ul {
     width: calc(100% + 16px);
     position: relative;
     left: -8px;
-    height: 2.6rem;
+    height: 5.6rem;
     margin-bottom: 20px;
     top: -10px;
     padding-top: 42px;
-    font-family: 'Inter', sans-serif; /* Aplica a fonte Inter */
+    font-family: "Inter", sans-serif;
     font-size: 25px;
-    font-weight: 700; /* Define o peso da fonte como bold */
+    font-weight: 700;
   }
   
   .dish-name {

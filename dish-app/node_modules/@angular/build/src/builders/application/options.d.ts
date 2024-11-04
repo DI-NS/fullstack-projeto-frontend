@@ -10,7 +10,10 @@ import type { Plugin } from 'esbuild';
 import { I18nOptions } from '../../utils/i18n-options';
 import { IndexHtmlTransform } from '../../utils/index-file/index-html-generator';
 import { Schema as ApplicationBuilderOptions, I18NTranslation, OutputPathClass } from './schema';
-export type NormalizedOutputOptions = Required<OutputPathClass>;
+export type NormalizedOutputOptions = Required<OutputPathClass> & {
+    clean: boolean;
+    ignoreServer: boolean;
+};
 export type NormalizedApplicationBuildOptions = Awaited<ReturnType<typeof normalizeOptions>>;
 export interface ApplicationBuilderExtensions {
     codePlugins?: Plugin[];
@@ -61,7 +64,6 @@ export declare function normalizeOptions(context: BuilderContext, projectName: s
     baseHref: string | undefined;
     cacheOptions: import("../../utils/normalize-cache").NormalizedCachedOptions;
     crossOrigin: import("./schema").CrossOrigin | undefined;
-    deleteOutputPath: boolean | undefined;
     externalDependencies: string[] | undefined;
     extractLicenses: boolean | undefined;
     inlineStyleLanguage: string;
@@ -94,7 +96,7 @@ export declare function normalizeOptions(context: BuilderContext, projectName: s
     workspaceRoot: string;
     entryPoints: Record<string, string>;
     optimizationOptions: import("../../utils").NormalizedOptimizationOptions;
-    outputOptions: Required<OutputPathClass>;
+    outputOptions: NormalizedOutputOptions;
     outExtension: "js" | "mjs" | undefined;
     sourcemapOptions: import("./schema").SourceMapClass;
     tsconfig: string;

@@ -7,7 +7,7 @@
  */
 import { BuilderContext } from '@angular-devkit/architect';
 import { BuildOptions, Metafile, OutputFile } from 'esbuild';
-import { NormalizedApplicationBuildOptions, NormalizedOutputOptions } from '../../builders/application/options';
+import { NormalizedApplicationBuildOptions } from '../../builders/application/options';
 import { BudgetCalculatorResult } from '../../utils/bundle-calculator';
 import { BuildOutputFile, BuildOutputFileType, InitialFileRecord } from './bundler-context';
 import { BuildOutputAsset, ExecutionResult } from './bundler-execution-result';
@@ -24,7 +24,6 @@ export declare function withNoProgress<T>(text: string, action: () => T | Promis
  * @returns An object that can be used with the esbuild build `supported` option.
  */
 export declare function getFeatureSupport(target: string[], nativeAsyncAwait: boolean): BuildOptions['supported'];
-export declare function writeResultFiles(outputFiles: BuildOutputFile[], assetFiles: BuildOutputAsset[] | undefined, { base, browser, server }: NormalizedOutputOptions): Promise<void>;
 export declare function emitFilesToDisk<T = BuildOutputAsset | BuildOutputFile>(files: T[], writeFileCallback: (file: T) => Promise<void>): Promise<void>;
 export declare function createOutputFile(path: string, data: string | Uint8Array, type: BuildOutputFileType): BuildOutputFile;
 export declare function convertOutputFile(file: OutputFile, type: BuildOutputFileType): BuildOutputFile;

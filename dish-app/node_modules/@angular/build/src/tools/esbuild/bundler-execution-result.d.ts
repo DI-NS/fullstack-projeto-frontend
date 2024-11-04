@@ -38,6 +38,8 @@ export declare class ExecutionResult {
     logs: string[];
     externalMetadata?: ExternalResultMetadata;
     extraWatchFiles: string[];
+    htmlIndexPath?: string;
+    htmlBaseHref?: string;
     constructor(rebuildContexts: BundlerContext[], codeBundleCache?: SourceFileCache | undefined);
     addOutputFile(path: string, content: string | Uint8Array, type: BuildOutputFileType): void;
     addAssets(assets: BuildOutputAsset[]): void;
