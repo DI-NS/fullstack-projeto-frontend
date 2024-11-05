@@ -1,58 +1,61 @@
 .order-container {
-  border: 1px solid #ccc;
-  padding: 16px;
-  margin: 8px 0;
-  border-radius: 8px;
-}
-
-.order-container h3 {
-  margin-top: 0;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-ul li {
-  padding: 4px 0;
-  display: flex; /* Organiza nome e descrição em coluna */
-  flex-direction: column;
-}
-
-ul li .product-name {
-  font-size: 20px;
-  font-weight: 600;
-  font-family: 'Inter', sans-serif;
-}
-
-ul li .product-description {
-  font-size: 14px;
-  font-weight: 500;
-}
-
-/* Estilo do cabeçalho com ID do pedido e dropdown, fora do quadrado */
-.order-header {
-  display: flex; /* Coloca ID e dropdown lado a lado */
-  justify-content: space-between; /* Distribui os itens entre os extremos */
-  align-items: center; /* Alinha os itens verticalmente */
-  margin-bottom: 10px; /* Espaço entre o cabeçalho e o quadrado */
-}
-
-.status-dropdown {
-  display: flex;
-  align-items: center;
-}
-
-.status-dropdown label {
-  margin-right: 8px; /* Dá um espaçamento entre o label e o select */
-}
-
-.status-dropdown select {
-  padding: 4px;
-}
-
-h2 {
+    border: 1px solid #ccc;
+    padding: 16px;
+    margin: 8px 0;
+    border-radius: 8px;
+  }
+  
+  .order-container h3 {
+    margin-top: 0;
+  }
+  
+  .product-list {
+    display: flex; /* Altera para flex para organizar itens em linha */
+    flex-wrap: wrap; /* Permite que os itens se movam para a linha seguinte se não houver espaço */
+    padding: 0; /* Remove o padding padrão */
+    list-style-type: none; /* Remove os marcadores da lista */
+  }
+  
+  .product-list li {
+    margin-right: 16px; /* Espaço entre os produtos */
+    padding: 4px 0;
+    display: flex; /* Mantém flexibilidade para os nomes */
+    flex-direction: column; /* Alinha nome e descrição em coluna se precisar */
+  }
+  
+  .product-name {
+    font-size: 20px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .product-description {
+    font-size: 16px;
+    font-weight: 500;
+  }
+  
+  /* Estilo do cabeçalho com ID do pedido e dropdown, fora do quadrado */
+  .order-header {
+    display: flex; /* Coloca ID e dropdown lado a lado */
+    justify-content: space-between; /* Distribui os itens entre os extremos */
+    align-items: center; /* Alinha os itens verticalmente */
+    margin-bottom: 10px; /* Espaço entre o cabeçalho e o quadrado */
+  }
+  
+  .status-dropdown {
+    display: flex;
+    align-items: center;
+  }
+  
+  .status-dropdown label {
+    margin-right: 8px; /* Dá um espaçamento entre o label e o select */
+  }
+  
+  .status-dropdown select {
+    padding: 4px;
+  }
+  
+  h2 {
     text-align: center;
     background-color: #E6F0FF;
     padding: 0px;
@@ -69,30 +72,18 @@ h2 {
     font-size: 25px;
     font-weight: 700;
   }
-
+  
   .button-footer {
     width: 100%;
     position: fixed;
-    /* bottom: 20px; */
     left: 0%;
     display: flex;
     justify-content: center;
-    /* height: 80px; */
-    /* background-color: black; */
-    align-items: center;
-    text-align: center;
-    background-color: #E6F0FF;
-    /* padding: 0px; */
-    /* margin: 0px; */
-    /* border-radius: 0; */
-    /* width: calc(100% + 16px); */
-    /* position: relative; */
-    /* left: -8px; */
     height: 5rem;
     margin-bottom: 20px;
     bottom: -20px;
-    /* padding-top: 42px; */
     font-family: "Inter", sans-serif;
     font-size: 25px;
     font-weight: 700;
   }
+  

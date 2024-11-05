@@ -1,5 +1,5 @@
 
-<h2>Informações de Entrega</h2>
+<h2>Entrega de Pedidos</h2>
 <div *ngIf="orders.length === 0">Não há pedidos para despache ou a caminho.</div>
 
 <div *ngFor="let order of orders">
@@ -19,14 +19,17 @@
   <!-- Quadrado contendo os produtos -->
   <div class="order-container">
     <!-- Listagem dos produtos -->
-    <ul>
-      <li *ngFor="let product of order.product">
-        <span class="product-name">{{ product.name }}</span> <!-- Nome do produto -->
-        <span class="product-description">{{ product.description }}</span> <!-- Descrição do produto -->
+    <ul class="product-list">
+      <li *ngFor="let product of order.product; let last = last" style="display: inline;">
+        <span class="product-name">{{ product.name }}</span>
+        <span *ngIf="!last">, </span> <!-- Adiciona uma vírgula se não for o último item -->
       </li>
     </ul>
+    <span class="product-description">{{ order.idcliente.endereco }}</span>
   </div>
-</div>
+  
+  
+  
 
 <div class="button-footer">
 
