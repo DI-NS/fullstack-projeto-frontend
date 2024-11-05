@@ -1,6 +1,6 @@
 import {
   ObjectUtils
-} from "./chunk-X2RDIYXI.js";
+} from "./chunk-6C6F27GC.js";
 import {
   ChangeDetectionStrategy,
   Component,
@@ -672,35 +672,6 @@ var DomHandler = class _DomHandler {
                 [contenteditable]:not([tabIndex = "-1"]):not([disabled]):not([style*="display:none"]):not([hidden])${selector}`) : false;
   }
 };
-var ConnectedOverlayScrollHandler = class {
-  element;
-  listener;
-  scrollableParents;
-  constructor(element, listener = () => {
-  }) {
-    this.element = element;
-    this.listener = listener;
-  }
-  bindScrollListener() {
-    this.scrollableParents = DomHandler.getScrollableParents(this.element);
-    for (let i = 0; i < this.scrollableParents.length; i++) {
-      this.scrollableParents[i].addEventListener("scroll", this.listener);
-    }
-  }
-  unbindScrollListener() {
-    if (this.scrollableParents) {
-      for (let i = 0; i < this.scrollableParents.length; i++) {
-        this.scrollableParents[i].removeEventListener("scroll", this.listener);
-      }
-    }
-  }
-  destroy() {
-    this.unbindScrollListener();
-    this.element = null;
-    this.listener = null;
-    this.scrollableParents = null;
-  }
-};
 
 // node_modules/primeng/fesm2022/primeng-baseicon.mjs
 var _c0 = ["*"];
@@ -780,7 +751,6 @@ var BaseIcon = class _BaseIcon {
 
 export {
   DomHandler,
-  ConnectedOverlayScrollHandler,
   BaseIcon
 };
-//# sourceMappingURL=chunk-A3DWXPNW.js.map
+//# sourceMappingURL=chunk-DV6CGQC7.js.map
