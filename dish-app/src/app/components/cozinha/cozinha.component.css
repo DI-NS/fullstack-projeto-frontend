@@ -16,4 +16,38 @@ ul {
 
 ul li {
   padding: 4px 0;
+  display: flex; /* Organiza nome e descrição em coluna */
+  flex-direction: column;
+}
+
+ul li .product-name {
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+}
+
+ul li .product-description {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Estilo do cabeçalho com ID do pedido e dropdown, fora do quadrado */
+.order-header {
+  display: flex; /* Coloca ID e dropdown lado a lado */
+  justify-content: space-between; /* Distribui os itens entre os extremos */
+  align-items: center; /* Alinha os itens verticalmente */
+  margin-bottom: 10px; /* Espaço entre o cabeçalho e o quadrado */
+}
+
+.status-dropdown {
+  display: flex;
+  align-items: center;
+}
+
+.status-dropdown label {
+  margin-right: 8px; /* Dá um espaçamento entre o label e o select */
+}
+
+.status-dropdown select {
+  padding: 4px;
 }

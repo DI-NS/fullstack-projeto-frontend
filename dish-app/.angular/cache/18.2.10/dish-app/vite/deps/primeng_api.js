@@ -15,7 +15,7 @@ import {
   SharedModule,
   TranslationKeys,
   TreeDragDropService
-} from "./chunk-6C6F27GC.js";
+} from "./chunk-X2RDIYXI.js";
 import "./chunk-5BEHUDTH.js";
 export {
   ConfirmEventType,
