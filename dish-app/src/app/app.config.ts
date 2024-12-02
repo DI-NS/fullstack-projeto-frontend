@@ -9,17 +9,17 @@ import { FormsModule } from '@angular/forms'; // Adicione esta linha
 import { DadosClienteComponent } from './components/dados-cliente/dados-cliente.component'; // Importe seu componente
 import { CozinhaComponent } from './components/cozinha/cozinha.component'; // ajuste o caminho conforme necessário
 import { EntregaComponent } from './components/entrega/entrega.component'; // ajuste o caminho conforme necessário
-
-
+import { StatusPedidoComponent } from './components/status-pedido/status-pedido.component'; // Importe o componente
 
 const routes: Routes = [
   { path: '', component: DishListComponent },
   { path: 'add-dish', component: DishFormComponent },
   { path: 'edit-dish/:id', component: DishFormComponent },
   { path: 'cardapio', component: CardapioComponent },
-  { path: 'dados-cliente', component: DadosClienteComponent },// Adicione esta linha
+  { path: 'dados-cliente', component: DadosClienteComponent },
   { path: 'cozinha', component: CozinhaComponent },
   { path: 'entrega', component: EntregaComponent },
+  { path: 'status-pedido/:id', component: StatusPedidoComponent }, // Adicione esta rota
 ];
 
 export const appConfig: ApplicationConfig = {

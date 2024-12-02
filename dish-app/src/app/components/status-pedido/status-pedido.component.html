@@ -1,0 +1,26 @@
+<h2 class="title">Status do Pedido</h2>
+<div *ngIf="pedido" class="pedido-container">
+  <div class="pedido-info">
+    <p><strong>ID do Pedido:</strong> {{ pedido.id }}</p>
+    <p><strong>Status:</strong> <span class="status {{ pedido.status | lowercase }}">{{ pedido.status }}</span></p>
+  </div>
+  
+  <h3 class="subtitle">Produtos</h3>
+  <ul class="product-list">
+    <li *ngFor="let product of pedido.product" class="product-item">
+      <h4 class="product-name">{{ product.name }}</h4>
+      <p class="product-price">Preço: R$ {{ product.price | number:'1.2-2' }}</p>
+    </li>
+  </ul>
+  
+  <h3 class="subtitle">Informações do Cliente</h3>
+  <div class="client-info">
+    <p><strong>Nome:</strong> {{ pedido.idcliente.name }}</p>
+    <p><strong>Endereço:</strong> {{ pedido.idcliente.endereco }}</p>
+    
+  </div>
+</div>
+
+<div *ngIf="!pedido" class="loading-message">
+  <p>Carregando informações do pedido...</p>
+</div>

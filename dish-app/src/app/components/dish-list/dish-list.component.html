@@ -1,23 +1,33 @@
 <!-- src/app/components/dish-list/dish-list.component.html -->
-
-<h2>Dish List</h2>
-<table>
-  <tr>
-    <th>ID</th>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Price</th>
-    <th>Actions</th>
-  </tr>
-  <tr *ngFor="let dish of dishes">
-    <td>{{ dish.id }}</td>
-    <td>{{ dish.name }}</td>
-    <td>{{ dish.description }}</td>
-    <td>{{ dish.price }}</td>
-    <td>
-      <button (click)="deleteDish(dish.id!)">Delete</button>
-      <a [routerLink]="['/edit-dish', dish.id]">Edit</a>
-    </td>
-  </tr>
+<h2 class="dish-list-title">Dish List</h2>
+<table class="dish-table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let dish of dishes">
+      <td>{{ dish.id }}</td>
+      <td>{{ dish.name }}</td>
+      <td>{{ dish.description }}</td>
+      <td>R$ {{ dish.price | number:'1.2-2' }}</td>
+      <td>
+        <button class="btn-delete" (click)="deleteDish(dish.id!)">Delete</button>
+        <a class="btn-edit" [routerLink]="['/edit-dish', dish.id]">Edit</a>
+      </td>
+    </tr>
+  </tbody>
 </table>
-<a routerLink="/add-dish">Add New Dish</a>
+<a class="btn-add" routerLink="/add-dish">Add New Dish</a>
+<!-- Botão adicional para ir para o cardápio -->
+<a class="btn-menu" routerLink="/cardapio">ir ao cardápio</a>
+
+<a class="btn-menu" routerLink="/cozinha">ir a cozinha</a>
+
+<a class="btn-menu" routerLink="/entrega">ir ao entregador</a>
+

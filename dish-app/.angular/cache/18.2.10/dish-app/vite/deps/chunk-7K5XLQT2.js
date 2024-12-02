@@ -1,6 +1,6 @@
 import {
   ObjectUtils
-} from "./chunk-6C6F27GC.js";
+} from "./chunk-ERCRBY6O.js";
 import {
   ChangeDetectionStrategy,
   Component,
@@ -13,7 +13,7 @@ import {
   ɵɵdefineComponent,
   ɵɵprojection,
   ɵɵprojectionDef
-} from "./chunk-5BEHUDTH.js";
+} from "./chunk-MJLRC3IY.js";
 
 // node_modules/primeng/fesm2022/primeng-dom.mjs
 var DomHandler = class _DomHandler {
@@ -753,4 +753,4 @@ export {
   DomHandler,
   BaseIcon
 };
-//# sourceMappingURL=chunk-DV6CGQC7.js.map
+//# sourceMappingURL=chunk-7K5XLQT2.js.map

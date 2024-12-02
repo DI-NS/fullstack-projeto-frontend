@@ -1,0 +1,90 @@
+/* Títulos */
+.title {
+    text-align: center;
+    color: #3B82F6;
+    margin-bottom: 20px;
+  }
+  
+  .subtitle {
+    color: #3B82F6;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  /* Container do pedido */
+  .pedido-container {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background-color: #f9f9f9;
+    margin: 0 auto;
+    max-width: 800px;
+  }
+  
+  /* Informações do pedido */
+  .pedido-info p {
+    margin: 10px 0;
+  }
+  
+  /* Lista de produtos */
+  .product-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .product-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .product-item:last-child {
+    border-bottom: none;
+  }
+  
+  .product-name {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  
+  .product-description {
+    color: #555;
+  }
+  
+  .product-price {
+    color: #28a745;
+    font-weight: bold;
+  }
+  
+  /* Informações do cliente */
+  .client-info p {
+    margin: 5px 0;
+  }
+  
+  /* Status */
+  .status {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #000;
+  }
+  
+  .status.pendente {
+    background-color: #f0ad4e;
+  }
+  
+  .status.fazendo {
+    background-color: #d9534f;
+  }
+  
+  .status.pronto {
+    background-color: #5bc0de;
+  }
+  
+  /* Carregando mensagem */
+  .loading-message {
+    text-align: center;
+    color: #3B82F6;
+    font-style: italic;
+  }
+  

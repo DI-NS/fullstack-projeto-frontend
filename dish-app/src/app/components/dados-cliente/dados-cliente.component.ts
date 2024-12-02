@@ -45,17 +45,23 @@ export class DadosClienteComponent {
       }
     };
 
-    this.http.post(this.apiUrl, order).subscribe(response => {
+    this.http.post(this.apiUrl, order).subscribe((response: any) => {
       console.log('Pedido criado com sucesso:', response);
-      // Mostra o popup de confirmação
-      this.messageService.add({ severity: 'success', summary: 'Pedido Confirmado', detail: 'Seu pedido foi criado com sucesso!' });
-
-      // Redirecione ou exiba uma mensagem de sucesso
-      this.router.navigate(['/success']); // Ajuste para onde deseja navegar
+      this.messageService.add({ 
+        severity: 'success', 
+        summary: 'Pedido Confirmado', 
+        detail: 'Seu pedido foi criado com sucesso!' 
+      });
+    
+      // Redirecione para o componente status-pedido com o ID do pedido
+      this.router.navigate(['/status-pedido', response.id]);
     }, error => {
       console.error('Erro ao criar pedido:', error);
-      // Mostra o popup de erro
-      this.messageService.add({ severity: 'error', summary: 'Erro', detail: 'Erro ao criar o pedido. Tente novamente.' });
+      this.messageService.add({ 
+        severity: 'error', 
+        summary: 'Erro', 
+        detail: 'Erro ao criar o pedido. Tente novamente.' 
+      });
     });
   }
 }
